@@ -1,0 +1,2 @@
+class Multihead:
+  pass
