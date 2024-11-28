@@ -1,4 +1,5 @@
 import json
+import numpy as np
 from HeadAttentionVectors import HeadAttentionVectors
 class HeadAttention:
   EXISTENTIAL = "ExistentialWeigths.json"
@@ -99,7 +100,7 @@ class HeadAttention:
         v_vector = headAttentionVectors.get_v_matrix(j)
         scaled_v_vector = HeadAttention.scale_matrix(attentionModifiers[i][j][0][0], v_vector)
         final_vector = HeadAttention.add_matrices(final_vector, scaled_v_vector)
-        attentionMatrix.append(final_vector[0])
+      attentionMatrix.append(final_vector[0])
     return attentionMatrix
         
   pass
