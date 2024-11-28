@@ -4,18 +4,8 @@ from pprint import pprint
 from Embeddings import Embeddings
 from PositionalEncoding import PositionalEncoding
 
-# Pytanie
-query = "what dog drinks"
-words = query.split()
-
-# Ładowanie embeddingów z pliku JSON
-embeddings = Embeddings()
-
-# Tworzenie tablicy wektorów
-vectors_array =[]
-for word in words:
-    vector = embeddings.get_embedding(word)
-    vectors_array.append(vector)
+#  Tablica wektorów
+vectors_array =[[ 0.12,  0.85, -0.34,  0.45],[ 0.45,  0.01, -0.56,  0.55],[-0.78,  0.23,  0.67,  0.69]]
     
 # Obliczenie positional encoding
 positionalEncoding = PositionalEncoding()
@@ -23,7 +13,6 @@ vectors_with_positions = positionalEncoding.add_position(vectors_array)
     
 # Wyświetlenie wynikowego Positional Encoding
 pprint(vectors_with_positions)
-pprint(vectors_array)
     
 # Przykładowe wyświetlenie embeddingu dla słowa 'what dog drinks'
 #[[0.11971220728891936, 0.7512804051402927, -0.3334870921408144, 0.43496553411123023],
