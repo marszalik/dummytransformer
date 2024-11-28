@@ -2,6 +2,7 @@ from HeadAttention import HeadAttention
 from HeadAttentionVectors import HeadAttentionVectors
 from pprint import pprint
 
+# private methods tests
 print("test")
 e = [[1,2,3,4]]
 e1 = [[5,6,7,8]]

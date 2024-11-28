@@ -1,8 +1,10 @@
 import json
+import numpy as np
+
 
 class Embeddings:
-    def __init__(self, json_file):
-        self.embeddings = self.__load_json(json_file)
+    def __init__(self):
+        self.embeddings = self.__load_json("embeddings.json")
 
     def __load_json(self, file_path):
         with open(file_path, 'r') as f:
@@ -10,7 +12,5 @@ class Embeddings:
         return data
 
     def get_embedding(self, word):
-        return self.embeddings.get("embeddings", {}).get(word, None)
+        return np.array(self.embeddings[word])
     
-    def get_sentence(self):
-      return self.embeddings.get("sentence", "")
