@@ -20,5 +20,5 @@ pprint(vectors)
 # from PositionalEncoding import PositionalEncoding
 # positionalEncoding = PositionalEncoding()
 
-# positionalEncoding.addPosition()
+# vectors_with_positions = positionalEncoding.add_position(vectors)
 
