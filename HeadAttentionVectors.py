@@ -1,4 +1,4 @@
-class HeadAttentionMatrices:
+class HeadAttentionVectors:
   def __init__(self):
     self.q_matrices = []
     self.k_matrices = []
