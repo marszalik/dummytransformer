@@ -25,7 +25,9 @@ class AddAndNorm:
             np.ndarray: Znormalizowany wektor lub macierz.
         """
         mean = np.mean(x, axis=-1, keepdims=True)
+        print(mean)
         variance = np.var(x, axis=-1, keepdims=True)
+        print(variance)
         normalized = (x - mean) / np.sqrt(variance + 1e-6)
         return self.gamma * normalized + self.beta
 
@@ -42,6 +44,10 @@ class AddAndNorm:
         """
         # Dodawanie residuala
         added = input_tensor + residual_tensor
+        print(added)
         # Normalizacja
         normalized = self.layer_norm(added)
         return normalized
+
+    def add_and_norm_batch(self, input_tensors, residual_tensors):
+        pass
