@@ -3,18 +3,17 @@ import numpy as np
 
 class AddAndNorm:
 
-    def __init__(self, d_model):
-        """
-        Inicjalizacja klasy AddAndNorm.
-
-        Args:
-            d_model (int): Rozmiar modelu (długość wektora wejściowego).
-        """
-        self.d_model = d_model
-        self.gamma = np.ones(d_model)  # Skalar dla LayerNorm
-        self.beta = np.zeros(d_model)  # Przesunięcie dla LayerNorm
+    def __init__(self):
+       pass
+        
 
     def layer_norm(self, x):
+        if(x.ndim == 2):
+            self.d_model = x[0].shape[0] #wymiarowość embedingu lub sumy headow dla wielu
+        else:
+            self.d_model = x.shape[0] #wymiarowość embedingu lub sumy headow dla jednego
+        self.gamma = np.ones(self.d_model)  # Skalar dla LayerNorm
+        self.beta = np.zeros(self.d_model)  # Przesunięcie dla LayerNorm
         """
         Warstwa normalizacji (LayerNorm).
 
