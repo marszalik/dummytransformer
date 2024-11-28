@@ -45,3 +45,4 @@ class AddAndNorm:
         # Normalizacja
         normalized = self.layer_norm(added)
         return normalized
+
