@@ -1,4 +1,6 @@
 from Embeddings import Embeddings
+from PositionalEncoding import PositionalEncoding
+
 from pprint import pprint
 
 
@@ -17,8 +19,8 @@ print("vektory embedingu")
 pprint(vectors)
 
 
-# from PositionalEncoding import PositionalEncoding
-# positionalEncoding = PositionalEncoding()
+positionalEncoding = PositionalEncoding()
+vectors_with_positions = positionalEncoding.add_position(vectors)
 
-# vectors_with_positions = positionalEncoding.add_position(vectors)
+pprint(vectors_with_positions)
 

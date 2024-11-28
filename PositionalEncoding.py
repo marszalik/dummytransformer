@@ -1,21 +1,19 @@
 import numpy as np
 
 class PositionalEncoding:
-    def __init__(self, sentence, embedding_dim):
-        self.sentence = sentence
-        self.sentence_length = len(sentence)  # Używamy długości listy jako liczby
-        self.embedding_dim = embedding_dim
-        self.positional_encoding = self._compute_positional_encoding()
 
-    def compute_positional_encoding(self, array_vectors):
+    def add_position(self, vectors):
         
-        # Wypełniamy macierz wartościami opartymi na funkcjach trygonometrycznych
+        sentence_length = len(vectors)
+        positional_encoding = []
         # Obliczamy poszczególne wartości dla sinusoidy
-        for pos in range(self.array_vectors):
-            for i in range(self.embedding_dim):
+        for i in range(len(vectors)):
+            positional_encoding.append([])
+            for j in range(len(vectors[0])):
                 if i % 2 == 0:
-                    positional_encoding[pos, i] = np.sin(pos / (10000 ** (i / self.embedding_dim)))
+                    positional_encoding[i].append(float(np.sin(vectors[i][j] / (10000 ** (i / sentence_length)))))
                 else:
-                    positional_encoding[pos, i] = np.cos(pos / (10000 ** ((i - 1) / self.embedding_dim)))
+                    positional_encoding[i].append(float(np.cos(vectors[i][j] / (10000 ** ((i - 1) / sentence_length)))))
         
         return positional_encoding
+ 
